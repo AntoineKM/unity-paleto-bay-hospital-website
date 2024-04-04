@@ -1,7 +1,11 @@
 import { Button } from "kitchn";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
 const IndexPage = () => {
+  const session = useSession();
+
+  console.log("session", session);
+
   return (
     <Button
       mt={"extraLarge"}

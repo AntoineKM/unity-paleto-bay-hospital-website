@@ -13,14 +13,22 @@ import {
 import { NextPage } from "next";
 import { useSession } from "next-auth/react";
 import React from "react";
+import useSWR from "swr";
+
+import { ResponseMembersEmployeesData } from "./api/members/employees";
+import { fetcher } from "../services/swr";
 
 const WorkPage: NextPage = () => {
   const [value, setValue] = React.useState(0);
   const session = useSession();
   const { theme } = useTheme();
   const { setToast } = useToasts();
+  const { data } = useSWR<ResponseMembersEmployeesData>(
+    "/api/members/employees",
+    fetcher,
+  );
 
-  if (session.status === "loading") {
+  if (session.status === "loading" || !data) {
     return <div>{"Loading..."}</div>;
   }
 
@@ -84,33 +92,59 @@ const WorkPage: NextPage = () => {
         </Container>
 
         <Container mt={"large"}>
-          <Entity
-            thumbnail={<Avatar size={32} text={"Evan Impala"} />}
-            checkbox={
-              <Text color={"light"} size={"small"}>
-                {"1."}
-              </Text>
-            }
-            menuContent={<Menu.Item>{"Foo"}</Menu.Item>}
-          >
-            <EntityField title={"Evan Impala"} description={"Cadre Santé"} />
-            <EntityField label title={"Téléphone"} description={"556-8934"} />
-            <EntityField justify={"flex-end"} description={"34h 23m 12s"} />
-          </Entity>
-
-          <Entity
-            thumbnail={<Avatar size={32} text={"Cedric Cardoso"} />}
-            checkbox={
-              <Text color={"light"} size={"small"}>
-                {"2."}
-              </Text>
-            }
-            menuContent={<Menu.Item>{"Foo"}</Menu.Item>}
-          >
-            <EntityField title={"Cedric Cardoso"} description={"Cadre Santé"} />
-            <EntityField label title={"Téléphone"} description={"556-8934"} />
-            <EntityField justify={"flex-end"} description={"34h 23m 12s"} />
-          </Entity>
+          {data?.employees &&
+            data.employees.length > 0 &&
+            data.employees.map((employee, i) => {
+              return (
+                <Entity
+                  key={i}
+                  thumbnail={<Avatar size={32} text={"Antoine"} />}
+                  checkbox={
+                    <Text color={"light"} size={"small"}>
+                      {`${i + 1}.`}
+                    </Text>
+                  }
+                  menuContent={
+                    <>
+                      <Menu.Item>{"Ajouter du temps"}</Menu.Item>
+                      <Menu.Divider />
+                      <Menu.Item>
+                        <Text accent={"danger"} size={"inherit"}>
+                          {"Supprimer du temps"}
+                        </Text>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Text accent={"danger"} size={"inherit"}>
+                          {"Annuler le service"}
+                        </Text>
+                      </Menu.Item>
+                    </>
+                  }
+                >
+                  <EntityField
+                    title={`${employee.firstName} ${employee.lastName}`}
+                    description={employee.grade}
+                  />
+                  <EntityField
+                    label
+                    title={"Téléphone"}
+                    description={employee.phoneNumber}
+                  />
+                  <EntityField
+                    label
+                    title={"Ancienneté"}
+                    description={`${employee.daysInCompany} jour${
+                      employee.daysInCompany > 1 ? "s" : ""
+                    }
+                      `}
+                  />
+                  <EntityField
+                    justify={"flex-end"}
+                    description={"34h 23m 12s"}
+                  />
+                </Entity>
+              );
+            })}
         </Container>
       </Container>
     </Container>

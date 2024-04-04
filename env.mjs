@@ -9,6 +9,8 @@ export const env = createEnv({
     DISCORD_CLIENT_SECRET: z.string(),
     NEXTAUTH_URL: z.string(),
     NEXTAUTH_SECRET: z.string(),
+    GOOGLE_SERVICE_ACCOUNT_EMAIL: z.string(),
+    GOOGLE_PRIVATE_KEY: z.string(),
   },
   client: {},
   runtimeEnv: {
@@ -16,6 +18,8 @@ export const env = createEnv({
     DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY,
   },
   skipValidation: !!process.env.CI,
   emptyStringAsUndefined: true,

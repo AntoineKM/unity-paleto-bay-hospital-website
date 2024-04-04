@@ -1,16 +1,17 @@
 import { Container, Link, Text } from "kitchn";
 import useSWR from "swr";
 
+import { ResponseCountsData } from "../../pages/api/counts";
 import { fetcher } from "../../services/swr";
 
 const Topbar = () => {
-  const { data, error, isLoading } = useSWR<{
-    Data: {
-      clients: number;
-    };
-  }>("https://servers-frontend.fivem.net/api/servers/single/q8538p", fetcher, {
-    refreshInterval: 5000,
-  });
+  const { data, error, isLoading } = useSWR<ResponseCountsData>(
+    "/api/counts",
+    fetcher,
+    {
+      refreshInterval: 5000,
+    },
+  );
 
   return (
     <Container px={"normal"} h={30} align={"center"} row>
@@ -24,19 +25,19 @@ const Topbar = () => {
           <Text size={"inherit"} color={"light"} mx={"tiny"} span>
             {"•"}
           </Text>
-          {`${data && !error && !isLoading ? data.Data.clients : "-"} citoyens en ville`}
+          {`${data && !error && !isLoading ? data.players : "-"} citoyens en ville`}
         </Text>
         <Text size={"inherit"} color={"light"} span>
           <Text size={"inherit"} color={"light"} mx={"tiny"} span>
             {"•"}
           </Text>
-          {`${data && !error && !isLoading ? data.Data.clients : "-"} effectifs`}
+          {`${data && !error && !isLoading ? data.members : "-"} effectifs`}
         </Text>
         <Text size={"inherit"} color={"light"} span>
           <Text size={"inherit"} color={"light"} mx={"tiny"} span>
             {"•"}
           </Text>
-          {`${data && !error && !isLoading ? data.Data.clients : "-"} ems en service`}
+          {`${data && !error && !isLoading ? data.workingMembers : "-"} ems en service`}
         </Text>
       </Text>
     </Container>
