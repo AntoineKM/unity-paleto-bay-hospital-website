@@ -1,4 +1,4 @@
-import { Container, Text } from "kitchn";
+import { Container, Link, Text } from "kitchn";
 import useSWR from "swr";
 
 import { fetcher } from "../../services/swr";
@@ -15,9 +15,11 @@ const Topbar = () => {
   return (
     <Container px={"normal"} h={30} align={"center"} row>
       <Text size={"small"} span>
-        <Text size={"inherit"} weight={"black"} span>
-          {"Unity RP 🐬"}
-        </Text>
+        <Link href={"/"}>
+          <Text size={"inherit"} weight={"black"} span>
+            {"Unity RP 🐬"}
+          </Text>
+        </Link>
         <Text size={"inherit"} color={"light"} span>
           <Text size={"inherit"} color={"light"} mx={"tiny"} span>
             {"•"}
