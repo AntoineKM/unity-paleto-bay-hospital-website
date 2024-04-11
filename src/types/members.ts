@@ -16,7 +16,6 @@ export type Member = {
   firstName: string;
   rib: string;
   discordId: string;
-  discordAvatarUrl: string;
   socialSecurityNumber: string;
   phoneNumber: string;
   status: "Employé" | "Refus de candidature" | "Licencié" | "Démission";

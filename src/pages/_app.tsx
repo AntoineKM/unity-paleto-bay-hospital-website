@@ -2,7 +2,7 @@ import { KitchnProvider, createTheme, darkTheme } from "kitchn";
 import { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import { accentColors } from "../services/themes";
 
 import "kitchn/fonts.css";

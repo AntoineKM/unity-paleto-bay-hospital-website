@@ -1,10 +1,12 @@
-import { Container, Link, Text } from "kitchn";
+import { Container, Link, Skeleton, Text } from "kitchn";
+import { useSession } from "next-auth/react";
 import useSWR from "swr";
 
 import { ResponseCountsData } from "../../pages/api/counts";
 import { fetcher } from "../../services/swr";
 
 const Topbar = () => {
+  const session = useSession();
   const { data, error, isLoading } = useSWR<ResponseCountsData>(
     "/api/counts",
     fetcher,
@@ -15,31 +17,40 @@ const Topbar = () => {
 
   return (
     <Container px={"normal"} h={30} align={"center"} row>
-      <Text size={"small"} span>
-        <Link href={"/"}>
-          <Text size={"inherit"} weight={"black"} span>
-            {"Unity RP 🐬"}
+      <Container align={"center"} row>
+        <Text size={"small"} span>
+          <Link href={"/"}>
+            <Text size={"inherit"} weight={"black"} span>
+              {"Unity RP 🐬"}
+            </Text>
+          </Link>
+          <Text size={"inherit"} color={"light"} span>
+            <Text size={"inherit"} color={"light"} mx={"tiny"} span>
+              {"•"}
+            </Text>
+            {`${data && !error && !isLoading ? data.players : "-"} citoyens en ville`}
           </Text>
-        </Link>
-        <Text size={"inherit"} color={"light"} span>
-          <Text size={"inherit"} color={"light"} mx={"tiny"} span>
-            {"•"}
+          <Text size={"inherit"} color={"light"} span>
+            <Text size={"inherit"} color={"light"} mx={"tiny"} span>
+              {"•"}
+            </Text>
+            {`${data && !error && !isLoading ? data.members : "-"} effectifs`}
           </Text>
-          {`${data && !error && !isLoading ? data.players : "-"} citoyens en ville`}
+          <Text size={"inherit"} color={"light"} span>
+            <Text size={"inherit"} color={"light"} mx={"tiny"} span>
+              {"•"}
+            </Text>
+            {`${data && !error && !isLoading ? data.workingMembers : "-"} ems en service`}
+          </Text>
         </Text>
-        <Text size={"inherit"} color={"light"} span>
-          <Text size={"inherit"} color={"light"} mx={"tiny"} span>
-            {"•"}
+      </Container>
+      <Container ml={"auto"} align={"center"} row>
+        <Skeleton show={session.status === "loading"}>
+          <Text size={"small"} color={"light"} span>
+            {`Connecté en tant que ${session.data?.user?.firstName} ${session.data?.user?.lastName}`}
           </Text>
-          {`${data && !error && !isLoading ? data.members : "-"} effectifs`}
-        </Text>
-        <Text size={"inherit"} color={"light"} span>
-          <Text size={"inherit"} color={"light"} mx={"tiny"} span>
-            {"•"}
-          </Text>
-          {`${data && !error && !isLoading ? data.workingMembers : "-"} ems en service`}
-        </Text>
-      </Text>
+        </Skeleton>
+      </Container>
     </Container>
   );
 };

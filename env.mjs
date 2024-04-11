@@ -5,6 +5,7 @@ export const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "production", "test"]).optional(),
     PORT: z.string().optional(),
+    DATABASE_URL: z.string(),
     DISCORD_CLIENT_ID: z.string(),
     DISCORD_CLIENT_SECRET: z.string(),
     NEXTAUTH_URL: z.string(),
@@ -14,6 +15,9 @@ export const env = createEnv({
   },
   client: {},
   runtimeEnv: {
+    NODE_ENV: process.env.NODE_ENV,
+    PORT: process.env.PORT,
+    DATABASE_URL: process.env.DATABASE_URL,
     DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
     DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,

@@ -1,20 +1,23 @@
-import { Button } from "kitchn";
+import { Button, Container } from "kitchn";
+import { useRouter } from "next/router";
 import { signIn, useSession } from "next-auth/react";
 
 const IndexPage = () => {
   const session = useSession();
-
-  console.log("session", session);
-
+  const router = useRouter();
   return (
-    <Button
-      mt={"extraLarge"}
-      onClick={() => {
-        signIn("discord");
-      }}
-    >
-      {"Se connecter"}
-    </Button>
+    <Container align={"center"}>
+      {session.data ? (
+        <Button onClick={() => router.push("/pointeuse")}>
+          {"Connecté en tant que "}
+          {session.data.user?.name}
+        </Button>
+      ) : (
+        <Button onClick={() => signIn("discord")}>
+          {"Se connecter avec Discord"}
+        </Button>
+      )}
+    </Container>
   );
 };
 

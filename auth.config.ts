@@ -1,4 +1,4 @@
-import type { NextAuthConfig } from "next-auth";
+import type { NextAuthConfig } from "next-auth/index";
 import Discord from "next-auth/providers/discord";
 
 import { env } from "@/env.mjs";

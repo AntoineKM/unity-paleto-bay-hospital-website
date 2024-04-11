@@ -1,7 +1,7 @@
 import kitchn, { Container, Image, Text, convertRGBToRGBA } from "kitchn";
 import Head from "next/head";
 
-import Topbar from "../Topbar";
+import Topbar from "../topbar";
 
 export type LayoutProps = React.PropsWithChildren;
 
@@ -13,14 +13,16 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
         <title>{"Paleto Bay Hospital"}</title>
         <link rel={"icon"} href={"/favicon.ico"} />
       </Head>
-      <Centered pt={"large"} justify={"center"} align={"center"} gap={18} row>
-        <Image src={"/icon.png"} alt={"Kitchn Icon"} h={75} />
-        <Text size={42} weight={"bold"}>
-          {"Paleto Bay Hospital"}
-        </Text>
-      </Centered>
-      <Container maxW={"laptop"} mx={"auto"} p={"extraLarge"}>
-        {children}
+      <Container pt={30}>
+        <Centered pt={"large"} justify={"center"} align={"center"} gap={18} row>
+          <Image src={"/icon.png"} alt={"Kitchn Icon"} h={75} />
+          <Text size={42} weight={"bold"}>
+            {"Paleto Bay Hospital"}
+          </Text>
+        </Centered>
+        <Container maxW={"laptop"} mx={"auto"} p={"extraLarge"}>
+          {children}
+        </Container>
       </Container>
     </>
   );
