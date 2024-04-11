@@ -11,8 +11,16 @@ export default middleware(
     const isLoggedIn = !!req.auth;
 
     const isApiAuthRoute = nextUrl.pathname.startsWith("/api/auth");
+    const isAuthRoute = ["/auth"].includes(nextUrl.pathname);
 
     if (isApiAuthRoute) return;
+
+    if (isAuthRoute) {
+      if (isLoggedIn) {
+        return Response.redirect(new URL("/", nextUrl));
+      }
+      return;
+    }
 
     if (!isLoggedIn) {
       let callbackUrl = nextUrl.pathname;
@@ -23,7 +31,7 @@ export default middleware(
       const encodedCallbackUrl = encodeURIComponent(callbackUrl);
 
       return Response.redirect(
-        new URL(`/api/auth/signin?callbackUrl=${encodedCallbackUrl}`, nextUrl),
+        new URL(`/auth?callbackUrl=${encodedCallbackUrl}`, nextUrl),
       );
     }
   },

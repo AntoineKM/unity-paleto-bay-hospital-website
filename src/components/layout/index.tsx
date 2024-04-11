@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       </Head>
       <Container pt={30}>
         <Centered pt={"large"} justify={"center"} align={"center"} gap={18} row>
-          <Image src={"/icon.png"} alt={"Kitchn Icon"} h={75} />
+          <Image src={"/icon.png"} alt={"Logo Paleto Bay Hospital"} h={75} />
           <Text size={42} weight={"bold"}>
             {"Paleto Bay Hospital"}
           </Text>
