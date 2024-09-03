@@ -1827,10 +1827,10 @@ axe-core@=4.7.0:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.7.0.tgz#34ba5a48a8b564f67e103f0aa5768d76e15bbbbf"
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
 
-axios@^1.4.0:
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.8.tgz#66d294951f5d988a00e87a0ffb955316a619ea66"
-  integrity sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==
+axios@^1.7.7:
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.7.tgz#2f554296f9892a72ac8d8e4c5b79c14a91d0a47f"
+  integrity sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
@@ -2765,9 +2765,9 @@ flatted@^3.2.9:
   integrity sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==
 
 follow-redirects@^1.15.6:
-  version "1.15.6"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.6.tgz#7f815c0cda4249c74ff09e95ef97c23b5fd0399b"
-  integrity sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==
+  version "1.15.8"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.8.tgz#ae67b97ae32e0a7b36066a5448938374ec18d13d"
+  integrity sha512-xgrmBhBToVKay1q2Tao5LI26B83UhrB/vM1avwVSDzt8rx3rO6AizBAaF46EgksTVr+rFTQaqZZ9MVBfUe4nig==
 
 for-each@^0.3.3:
   version "0.3.3"
@@ -2960,11 +2960,11 @@ google-auth-library@^9.7.0:
     jws "^4.0.0"
 
 google-spreadsheet@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/google-spreadsheet/-/google-spreadsheet-4.1.1.tgz#56c422c86b51a2ea9dad21c40cd69bccbd58591f"
-  integrity sha512-Npk/xAMTgxEt/m/X9EXIqdY6CEYGiqUHrSuiLnNSKli5H+wiOQLSLsnfMxcdNPH6aSh6GttZm6QJhrnsxjwpZQ==
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/google-spreadsheet/-/google-spreadsheet-4.1.4.tgz#c52f3f65f05ba7d84b23d988e7b7100c369a0287"
+  integrity sha512-v6Bi7LIB/2E3+/XKmk11Qih2U0KpENSZuLSHOi8XoRDna/Tx8WYCZeEUTF60eucaELGLWC8GSepb0Cbkr3aXfg==
   dependencies:
-    axios "^1.4.0"
+    axios "^1.7.7"
     lodash "^4.17.21"
 
 gopd@^1.0.1:
