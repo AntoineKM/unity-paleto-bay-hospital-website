@@ -15,19 +15,6 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@auth/core@0.28.1":
-  version "0.28.1"
-  resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.28.1.tgz#a60f509424089cf2041efb6d3ff42e2c16791350"
-  integrity sha512-gvp74mypYZADpTlfGRp6HE0G3pIHWvtJpy+KZ+8FvY0cmlIpHog+jdMOdd29dQtLtN25kF2YbfHsesCFuGUQbg==
-  dependencies:
-    "@panva/hkdf" "^1.1.1"
-    "@types/cookie" "0.6.0"
-    cookie "0.6.0"
-    jose "^5.1.3"
-    oauth4webapi "^2.4.0"
-    preact "10.11.3"
-    preact-render-to-string "5.2.3"
-
 "@auth/core@0.29.0":
   version "0.29.0"
   resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.29.0.tgz#764c3cf4ebfb4ab248f24a1ee18d67ae1c5e433b"
@@ -38,6 +25,19 @@
     cookie "0.6.0"
     jose "^5.1.3"
     oauth4webapi "^2.4.0"
+    preact "10.11.3"
+    preact-render-to-string "5.2.3"
+
+"@auth/core@0.35.3":
+  version "0.35.3"
+  resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.35.3.tgz#d34a0f58dca1ec084d213900e87333fcb90b501b"
+  integrity sha512-g6qfiqU4OtyvIEZ8J7UoIwAxEnNnLJV0/f/DW41U+4G5nhBlaCrnKhawJIJpU0D3uavXLeDT3B0BkjtiimvMDA==
+  dependencies:
+    "@panva/hkdf" "^1.1.1"
+    "@types/cookie" "0.6.0"
+    cookie "0.6.0"
+    jose "^5.1.3"
+    oauth4webapi "^2.10.4"
     preact "10.11.3"
     preact-render-to-string "5.2.3"
 
@@ -1317,9 +1317,9 @@
     fastq "^1.6.0"
 
 "@panva/hkdf@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@panva/hkdf/-/hkdf-1.1.1.tgz#ab9cd8755d1976e72fc77a00f7655a64efe6cd5d"
-  integrity sha512-dhPeilub1NuIG0X5Kvhh9lH4iW3ZsHlnzwgwbOlgwQ2wG1IqFzsgHqmKPk3WzsdWAeaxKJxgM0+W433RmN45GA==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@panva/hkdf/-/hkdf-1.2.1.tgz#cb0d111ef700136f4580349ff0226bf25c853f23"
+  integrity sha512-6oclG6Y3PiDFcoyk8srjLfVKyMfVCKJ27JwNPViuXziFpmdz+MZnZN/aKY0JGXgYuO/VghU0jcOAZgWXZ1Dmrw==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -3304,9 +3304,9 @@ jackspeak@^2.3.5:
     "@pkgjs/parseargs" "^0.11.0"
 
 jose@^5.1.3:
-  version "5.2.4"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-5.2.4.tgz#c0d296caeeed0b8444a8b8c3b68403d61aa4ed72"
-  integrity sha512-6ScbIk2WWCeXkmzF6bRPmEuaqy1m8SbsRFMa/FLrSCkGIhj8OLVG/IH+XHVmNMx/KUo8cVWEE6oKR4dJ+S0Rkg==
+  version "5.9.3"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-5.9.3.tgz#6eba1ee3f70b42891f0e1883fe0084a46dbbe02c"
+  integrity sha512-egLIoYSpcd+QUF+UHgobt5YzI2Pkw/H39ou9suW687MY6PmCwPmkNV/4TNjn1p2tX5xO3j0d0sq5hiYE24bSlg==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -3566,11 +3566,11 @@ natural-compare@^1.4.0:
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
 next-auth@^5.0.0-beta.16:
-  version "5.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-5.0.0-beta.16.tgz#cf02c9e5bbf4b91463943c0391604fcb5f46b22d"
-  integrity sha512-dX2snB+ezN23tFzSes3n3uosT9iBf0eILPYWH/R2fd9n3ZzdMQlRzq7JIOPeS1aLc84IuRlyuyXyx9XmmZB6og==
+  version "5.0.0-beta.22"
+  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-5.0.0-beta.22.tgz#df3e52cecb547bb1042afd194280a0db258a4e81"
+  integrity sha512-QGBo9HGOjmnJBHGXvtFztl0tM5tL0porDlk74HVoCCzXd986ApOlIW3EmiCuho7YzEopgkFiwwmcXpoCrHAtYw==
   dependencies:
-    "@auth/core" "0.28.1"
+    "@auth/core" "0.35.3"
 
 next-themes@^0.3.0:
   version "0.3.0"
@@ -3616,6 +3616,11 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
+oauth4webapi@^2.10.4:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/oauth4webapi/-/oauth4webapi-2.17.0.tgz#4af65bd4dac6761d8e4f2fb20848e82a879a6725"
+  integrity sha512-lbC0Z7uzAFNFyzEYRIC+pkSVvDHJTbEW+dYlSBAlCYDe6RxUkJ26bClhk8ocBZip1wfI9uKTe0fm4Ib4RHn6uQ==
 
 oauth4webapi@^2.4.0:
   version "2.10.4"
